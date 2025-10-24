@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:gravity="center_horizontal"
+    android:background="#5188ED"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="12dp"
+    android:paddingTop="32dp"
+    android:clipToPadding="false">
+
+    <!-- 🖼️ LOGO -->
+    <ImageView
+        android:id="@+id/imgHeader"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:src="@drawable/tucanchaimgsplash"
+        android:scaleType="centerCrop"
+        android:background="@drawable/bg_circle_white"
+        android:padding="8dp"
+        android:elevation="4dp" />
+
+    <!-- 👤 TEXTO -->
+    <TextView
+        android:id="@+id/tvHeaderTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tu Cancha / Mi Cancha / Nuestra Cancha"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        android:shadowColor="#80000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:gravity="center" />
+
+</LinearLayout>

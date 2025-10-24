@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ico_launcher_foreground"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ico_launcher_foreground"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TuCancha"
+        tools:targetApi="31">
+        <activity
+            android:name=".Pruebas.Ipprueba_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".MVC.ADMIN.HomeAdm_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Pruebas.pruebasDrawer.Drawer1_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Pruebas.DrawerrLayoutt.DrawerLayout1_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".MVC.CLIENTT.Buscar_Canchas_Activity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Pruebas.Ubicacion_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".MVC.CLIENTE.Geocoding.Query_CanchasCli_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".MVC.CLIENTE.Query_Canchas_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".MVC.ADMIN.mapa_dialog_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".MVC.ADMIN.registro.RegistroADM_Activity"
+            android:exported="false" /> <!-- ① Mapbox (ya lo tenías) -->
+        <meta-data
+            android:name="com.mapbox.token"
+            android:value="@string/mapbox_access_token" />
+        <meta-data
+            android:name="com.mapbox.token"
+            android:value="@string/mapbox_access_token" /> <!-- ② Facebook SDK: AQUI VAN LOS META-DATA (DENTRO DE <application>) -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.facebook.sdk.ClientToken"
+            android:value="@string/facebook_client_token" />
+        <!--
+ ③ (Recomendado) Soporte explícito a Custom Tabs con esquema fb{APP_ID}.
+               Si tu manifest merger ya lo añade, no pasa nada por dejarlo aquí.
+        -->
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- usa tu string fb_login_protocol_scheme = fb{APP_ID} -->
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MVC.ADMIN.DetallesCancha_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".MVC.ADMIN.Precios_Promo_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".MVC.ADMIN.Horario_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".MVC.Client_Query_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".MVC.RegistroCancha_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".MVC.Client_Activity"
+            android:exported="false"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MVC.Admi_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".MVC.TrackeoCliente_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Selection_Activity"
+            android:exported="false"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Pruebas.PruebasMapa_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

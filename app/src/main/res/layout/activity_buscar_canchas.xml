@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MVC.CLIENTT.Buscar_Canchas_Activity">
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/action_bar_toolbar"/>
+
+    <!-- 🔍 Barra de búsqueda -->
+    <LinearLayout
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_marginTop="60dp"
+        android:background="@android:color/white"
+        android:elevation="6dp">
+
+        <EditText
+            android:id="@+id/etBuscarCancha"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Buscar canchas..."
+            android:inputType="text"
+            android:padding="8dp"
+            android:background="@android:color/transparent" />
+
+        <ImageButton
+            android:id="@+id/btnBuscar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_mylocation"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Buscar" />
+    </LinearLayout>
+
+    <!-- 🗺️ Contenedor del mapa con vista flotante -->
+    <FrameLayout
+        android:id="@+id/mapContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize">
+
+        <!-- 🗺️ Mapa -->
+        <com.mapbox.maps.MapView
+            android:id="@+id/mapViewBuscar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- 💬 Vista superpuesta de información flotante -->
+        <LinearLayout
+            android:id="@+id/layoutInfoFlotante"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_info_marker"
+            android:padding="8dp"
+            android:elevation="8dp"
+            android:visibility="gone"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/tvNombreFlotante"
+                android:text="Cancha ejemplo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- 🔽 Lista de resultados -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCanchas"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_marginTop="120dp"
+        android:background="@android:color/white"
+        android:elevation="20dp"
+        android:translationZ="20dp"
+        android:visibility="gone"
+        android:layout_gravity="top" />
+
+    <!-- 📄 Información inferior (cancha seleccionada) -->
+    <LinearLayout
+        android:id="@+id/layoutInfoCancha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:elevation="25dp"
+        android:translationZ="25dp"
+        android:padding="12dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvNombreCancha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre de la Cancha"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvDireccionCancha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dirección"
+            android:textColor="#555555" />
+
+        <TextView
+            android:id="@+id/tvPrecioCancha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Precio: S/ 00.00"
+            android:textColor="#777777" />
+
+        <TextView
+            android:id="@+id/tvHorarioCancha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Horario: 7:00 AM - 11:00 PM"
+            android:textColor="#777777" />
+    </LinearLayout>
+
+
+    <!-- 🔄 Botón flotante para actualizar -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnActualizar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="180dp"
+        android:contentDescription="Actualizar canchas"
+        app:srcCompat="@android:drawable/ic_popup_sync"
+        app:backgroundTint="#718CE9"
+        app:tint="@android:color/white"
+        android:elevation="8dp" />
+
+
+    <ImageButton
+        android:id="@+id/btnMiUbicacion"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/com_facebook_button_icon"
+        android:contentDescription="Mi ubicación"
+        android:padding="10dp"
+        android:src="@android:drawable/ic_menu_mylocation"
+        android:elevation="8dp" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Tu Cancha</string>
+
+    <string name="mapbox_access_token">pk.eyJ1IjoiZWR3YXJkc3Rhcm90aDEyNDUiLCJhIjoiY21lenR4eWsyMGhiMjJycG9mY2FsdTVwOCJ9.WGcDZPYdSqUOH8BVLLp1_A</string>
+
+    <string name="default_web_client_id">
+    255253762194-uqggvvfvmbnubfsnibl5gupjm0b44dnk.apps.googleusercontent.com
+</string>
+
+    <string name="google_app_id">1:255253762194:android:68708eb5b61b454708164b</string>
+    <string name="gcm_defaultSenderId">255253762194</string>
+    <string name="firebase_database_url">https://tucancha-7da42-default-rtdb.firebaseio.com</string>
+    <string name="google_api_key">AIzaSyBX_dR_wuulLVjH1T8lHNMR7moMgT9NwG0</string>
+
+    <!-- FACEBOOK: **cambia** por los de tu app de Meta -->
+    <string name="facebook_app_id">24479732258351358</string>
+    <!-- opcional pero recomendado si lo tienes en el panel -->
+    <string name="facebook_client_token">13a1ad684de2228128af3934a039a589</string>
+    <!-- requerido para el esquema de login -->
+    <string name="fb_login_protocol_scheme">2447973225831538</string>
+
+
+    <string-array name="tipos_documento">
+        <item>DNI</item>
+        <item>RUC</item>
+        <item>Carnet de Extranjería</item>
+    </string-array>
+
+    <string name="navigation_drawer_open">Abrir menú</string>
+    <string name="navigation_drawer_close">Cerrar menú</string>
+
+    <!-- Se usa exclusivamente para drawert layout -->
+    <string name="open">Abrir menú</string>
+    <string name="close">Cerrar menú</string>
+
+</resources>

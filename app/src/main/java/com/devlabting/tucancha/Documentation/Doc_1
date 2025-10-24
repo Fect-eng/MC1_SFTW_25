@@ -1,0 +1,24 @@
+# Se guarda el SHA1 generado por Android Studio en formato hexadecimal separado por “:”
+$hex = "A4:8A:8C:C9:DD:95:F1:BD:98:97:71:C6:30:92:FC:7F:8A:F8:35:D4"
+
+# Convierte cada bloque hexadecimal en un byte y los une en una secuencia de caracteres (no se usa después, pero ayuda a validar la conversión)
+$bytes = -join ($hex -split ":" | ForEach-Object { [char][byte]("0x$_") })
+
+# Crea un array vacío de bytes con el mismo tamaño que la cantidad de bloques hexadecimales del SHA1
+$ba = New-Object byte[] ($hex.Split(':').Count)
+
+# Recorre cada bloque hexadecimal, lo convierte a decimal en base 16 y lo asigna a la posición correspondiente en el array de bytes
+0..($ba.Length-1) | ForEach-Object { $ba[$_] = [Convert]::ToByte($hex.Split(':')[$_],16) }
+
+# Convierte el array completo de bytes en un string codificado en Base64, que es el Key Hash que pide Facebook
+[Convert]::ToBase64String($ba)
+
+
+
+=============================================
+
+pIqMyd2V8b2YI3HGMJl8f4r4NdQ=
+
+pIqMyd2V8b2YI3HGMJl8f4r4NdQ=
+
+# es lo que salio en todo ese scriptt supuesto

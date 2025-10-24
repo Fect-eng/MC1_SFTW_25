@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "255253762194",
+    "firebase_url": "https://tucancha-7da42-default-rtdb.firebaseio.com",
+    "project_id": "tucancha-7da42",
+    "storage_bucket": "tucancha-7da42.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:255253762194:android:68708eb5b61b454708164b",
+        "android_client_info": {
+          "package_name": "com.devlabting.tucancha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "255253762194-v7rvg6nh8lagdi74nha7nfkjtijanedj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.devlabting.tucancha",
+            "certificate_hash": "a48a8cc9dd95f1bd989771c63092fc7f8af835d4"
+          }
+        },
+        {
+          "client_id": "255253762194-uqggvvfvmbnubfsnibl5gupjm0b44dnk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBX_dR_wuulLVjH1T8lHNMR7moMgT9NwG0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "255253762194-uqggvvfvmbnubfsnibl5gupjm0b44dnk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
