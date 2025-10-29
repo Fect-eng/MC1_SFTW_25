@@ -33,4 +33,17 @@
     <string name="open">Abrir menú</string>
     <string name="close">Cerrar menú</string>
 
+    <string-array name="tipos_cancha">
+        <item>Grass sintético</item>
+        <item>Grass natural (pasto)</item>
+        <item>Loza cemento</item>
+    </string-array>
+
+    <string-array name="meses_array">
+        <item>Octubre</item>
+        <item>Noviembre</item>
+        <item>Diciembre</item>
+    </string-array>
+
+
 </resources>

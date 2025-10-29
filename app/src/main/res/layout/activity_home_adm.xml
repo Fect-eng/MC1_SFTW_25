@@ -135,7 +135,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Reservación"
+                        android:text="Tu Cancha"
                         android:textColor="@android:color/white"
                         android:textStyle="bold"
                         android:layout_marginTop="4dp" />
@@ -167,7 +167,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tu Cancha"
+                        android:text="Reservacion"
                         android:textColor="@android:color/white"
                         android:textStyle="bold"
                         android:layout_marginTop="4dp" />

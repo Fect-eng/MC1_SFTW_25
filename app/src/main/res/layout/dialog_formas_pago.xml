@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Formas de Pago"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Yape / Plin -->
+        <CheckBox
+            android:id="@+id/chkYape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Yape" />
+
+        <CheckBox
+            android:id="@+id/chkPlin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Plin" />
+
+        <EditText
+            android:id="@+id/etYape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese número"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textColorHint="#000000"
+            android:enabled="false"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Nro Cuenta 1 -->
+        <CheckBox
+            android:id="@+id/chkCuenta1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Nro. Cuenta 1" />
+
+        <EditText
+            android:id="@+id/etCuenta1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nro. Cuenta"
+            android:textColorHint="#000000"
+            android:textColor="@color/black"
+            android:enabled="false"/>
+
+        <EditText
+            android:id="@+id/etCci1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="CCI"
+            android:textColor="@color/black"
+            android:textColorHint="#000000"
+            android:enabled="false"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Nro Cuenta 2 -->
+        <CheckBox
+            android:id="@+id/chkCuenta2"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text="Nro. Cuenta 2" />
+
+        <EditText
+            android:id="@+id/etCuenta2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nro. Cuenta"
+            android:textColor="@color/black"
+            android:textColorHint="#000000"
+            android:enabled="false"/>
+
+        <EditText
+            android:id="@+id/etCci2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="CCI"
+            android:textColor="@color/black"
+            android:textColorHint="#000000"
+            android:enabled="false"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Botón Guardar -->
+        <Button
+            android:id="@+id/btnGuardarPago"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GUARDAR"
+            android:backgroundTint="#000"
+            android:textColor="#fff"/>
+    </LinearLayout>
+</ScrollView>

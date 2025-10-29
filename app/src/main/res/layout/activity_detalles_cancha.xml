@@ -248,13 +248,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:boxBackgroundMode="outline">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etOtros"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Otros (opcional)"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                app:boxBackgroundMode="outline"/>
 
             <!-- ====== Tipo de Cancha ====== -->
             <TextView
@@ -269,14 +263,35 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:boxBackgroundMode="outline">
-                <AutoCompleteTextView
-                    android:id="@+id/actTipoCancha"
+                app:boxBackgroundMode="outline"
+                app:hintEnabled="false">
+
+                <Spinner
+                    android:id="@+id/spTipoCancha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Fulbito / Fútbol / Grass / Loza"
-                    android:inputType="none"/>
+                    android:spinnerMode="dropdown"
+                    android:textColorHint="#000000"
+                    android:entries="@array/tipos_cancha"
+                    android:padding="8dp"/>
             </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- ====== Formas de Pago ====== -->
+            <TextView
+                android:id="@+id/tvFormasPago"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Formas de Pago"
+                android:textStyle="bold"
+                android:textColor="#1976D2"
+                android:textColorHint="#000000"
+                android:textSize="16sp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp"/>
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

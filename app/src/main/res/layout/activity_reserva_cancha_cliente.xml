@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".MVC.CLIENTT.ReservaCancha.ReservaCancha_Cliente_Activity">
+
+    <!-- 🔹 Scroll principal para pantallas pequeñas -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- 🔹 Encabezado -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reservar Tu Cancha"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="12dp" />
+
+            <!-- 🔍 Buscador de canchas (MOVIDO AQUÍ) -->
+            <EditText
+                android:id="@+id/etBuscador"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="🔍 Buscar cancha o dueño..."
+                android:padding="10dp"
+                android:background="@drawable/boton_borde_negro"
+                android:textColor="#000000"
+                android:textColorHint="#808080"
+                android:inputType="text"
+                android:layout_marginBottom="14dp" />
+
+            <!-- 🔹 Selección de cancha -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selecciona Tu Cancha"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:id="@+id/layoutCanchas"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- 🔹 Contenedor horizontal de botones -->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- Botón principal que muestra la selección -->
+                    <Button
+                        android:id="@+id/btnCancha1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cancha 1\nS/.30.00"
+                        android:backgroundTint="#1976D2"
+                        android:textColor="#FFFFFF"
+                        android:padding="10dp"
+                        android:layout_marginEnd="10dp" />
+
+                    <!-- Botón dinámico para abrir lista de canchas -->
+                    <Button
+                        android:id="@+id/btnSeleccionarCancha"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ver canchas disponibles"
+                        android:background="@drawable/boton_borde_negro"
+                        android:textColor="#000000"
+                        android:padding="10dp"
+                        android:layout_marginStart="10dp" />
+                </LinearLayout>
+
+                <!-- 🔹 Texto con la información de la cancha -->
+                <TextView
+                    android:id="@+id/tvInfoCancha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Información de la cancha seleccionada aparecerá aquí"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:background="#F4F4F4"
+                    android:padding="10dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="8dp" />
+            </LinearLayout>
+
+            <!-- 🔹 Selección de mes -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selecciona Tu Fecha"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:id="@+id/layoutMeses"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnMesJulio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="JULIO"
+                    android:backgroundTint="#1976D2"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginEnd="10dp" />
+
+                <Button
+                    android:id="@+id/btnMesAgosto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AGOSTO"
+                    android:background="@drawable/boton_borde_negro"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <!-- 🔹 Fechas (Scroll horizontal) -->
+            <HorizontalScrollView
+                android:id="@+id/scrollDias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:id="@+id/contenedorDias"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="4dp" />
+            </HorizontalScrollView>
+
+            <!-- 🔹 Selección de horario -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selecciona tu Horario"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="8dp" />
+
+            <GridLayout
+                android:id="@+id/gridHorarios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:alignmentMode="alignMargins"
+                android:useDefaultMargins="true"
+                android:rowCount="4" />
+
+            <!-- 🔹 Botón de pago -->
+            <Button
+                android:id="@+id/btnPagar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="REALIZAR PAGO"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:background="@drawable/boton_borde_negro"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="40dp" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

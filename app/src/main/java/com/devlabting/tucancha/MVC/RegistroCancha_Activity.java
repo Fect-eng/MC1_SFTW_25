@@ -26,6 +26,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.devlabting.tucancha.MVC.ADMIN.DetallesCancha_Activity;
 import com.devlabting.tucancha.MVC.ADMIN.HomeAdm_Activity;
 import com.devlabting.tucancha.MVC.ADMIN.mapa_dialog_Activity;
 import com.devlabting.tucancha.MVC.MODEL.Cccancha;
@@ -240,8 +241,13 @@ public class RegistroCancha_Activity extends AppCompatActivity implements Naviga
         String canchaId = ref.push().getKey();
         ref.child(canchaId).setValue(cancha)
                 .addOnSuccessListener(aVoid -> {
-                    Toast.makeText(this, "Cancha registrada: " + nombre, Toast.LENGTH_SHORT).show();
+                    // ✅ Paso 1: mostrar loader circular
+                    android.app.ProgressDialog progressDialog = new android.app.ProgressDialog(RegistroCancha_Activity.this);
+                    progressDialog.setMessage("Guardando datos de la cancha...");
+                    progressDialog.setCancelable(false);
+                    progressDialog.show();
 
+                    // ✅ Paso 2: incrementar contador total de canchas
                     DatabaseReference contadorRef = FirebaseDatabase.getInstance()
                             .getReference("admins")
                             .child(adminUid)
@@ -263,16 +269,27 @@ public class RegistroCancha_Activity extends AppCompatActivity implements Naviga
                         public void onComplete(DatabaseError error, boolean committed, DataSnapshot snapshot) {}
                     });
 
+                    // ✅ Paso 3: Esperar 1 segundo y redirigir
                     new Handler().postDelayed(() -> {
-                        Intent intent = new Intent(RegistroCancha_Activity.this, HomeAdm_Activity.class);
+                        progressDialog.dismiss(); // Ocultar loader
+                        Toast.makeText(RegistroCancha_Activity.this, "✅ Cancha registrada correctamente", Toast.LENGTH_SHORT).show();
+
+                        // 🔹 Enviar a DetallesCancha_Activity con IDs
+                        Intent intent = new Intent(RegistroCancha_Activity.this, DetallesCancha_Activity.class);
+                        intent.putExtra("adminUid", adminUid);   // ✅ UID del usuario autenticado
+                        intent.putExtra("canchaId", canchaId);   // ✅ ID de la cancha recién creada
                         startActivity(intent);
                         finish();
+
                         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-                    }, 1500);
+                    }, 1000); // Espera 1 segundo antes de redirigir
+
                 })
                 .addOnFailureListener(e ->
                         Toast.makeText(this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show());
     }
+
+
 
     private void abrirMapa() {
         Intent i = new Intent(this, mapa_dialog_Activity.class);

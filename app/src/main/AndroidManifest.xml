@@ -19,6 +19,12 @@
         android:theme="@style/Theme.TuCancha"
         tools:targetApi="31">
         <activity
+            android:name=".MVC.CLIENTT.ReservaCancha.ReservaCancha_Cliente_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".MVC.ADMIN.reserva_canchas.reserva_canchaADM_Activity"
+            android:exported="false" />
+        <activity
             android:name=".Pruebas.Ipprueba_Activity"
             android:exported="false" />
         <activity
